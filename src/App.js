@@ -5,7 +5,6 @@ import Loader from "./components/Loader";
 
 const Home = lazy(() => import("./pages/Home"));
 const Navbar = lazy(() => import("./components/Navbar"));
-const Github = lazy(() => import("./components/Github"));
 const Editor = lazy(() => import("./pages/Editor"));
 
 function App() {
@@ -28,7 +27,6 @@ function App() {
           <Routes>
             <Route path='/' exact element={<Home />} />
             <Route path='/editor' exact element={<Editor />} />
-            <Route path='/github' exact element={<Github />} />
           </Routes>
         </BrowserRouter>
       </Suspense>
