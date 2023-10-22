@@ -1,8 +1,12 @@
-import React, { useState } from "react";
-import "./App.css"
+import React, { Suspense, lazy, useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import "./App.css";
+// import Loader from "./components/loader/Loader";
 
-const Navbar = import("./components/Navbar");
-const Editor = import("./pages/Editor");
+// const Home = lazy(() => import("./pages/home/Home"));
+const Navbar = lazy(() => import("./components/Navbar"));
+// const Github = lazy(() => import("./components/github/Github"));
+const Editor = lazy(() => import("./pages/Editor"));
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -13,8 +17,19 @@ function App() {
 
   return (
     <div className='App' id={`${darkMode ? `dark` : `light`}-mode`}>
-      <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      <Editor />
+      <Suspense
+        fallback={
+          <div>Loading ... </div>
+          // <Loader />
+        }
+      >
+        <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+        <Router>
+          <Routes>
+            <Route path='/' element={<Editor />} />
+          </Routes>
+        </Router>
+      </Suspense>
     </div>
   );
 }

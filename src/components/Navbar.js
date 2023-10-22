@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./Navbar.css";
-import Header from "./extra-components/Header";
+import Header from "../components/extra-components/Header";
 // import { DarkModeSwitch } from "react-toggle-dark-mode";
 
 const Navbar = ({ darkMode, toggleDarkMode }) => {
@@ -14,16 +14,19 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
     },
     {
       title: "SQL Editor",
-      link: "/",
+      link: "/editor",
     },
     {
       title: "Contact Us",
       link: "/",
     },
     {
+      title: "Login",
+      link: "/",
+    },
+    {
       title: "Github",
-      target: "_blank",
-      link: "https://github.com/Sushrutkun/Sql-editor/",
+      link: "https://github.com/kirtiksingh/Atlan-Frontend-Task",
     },
   ];
 
@@ -59,7 +62,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
       <nav className={`${scrolled ? "scrolled" : ""}`}>
         <div className={`nav-main`}>
           <span onClick={logoClick} className='nav-brand'>
-            <span className='nav-brand-text'>SQL Editor</span>
+            <span className='nav-brand-text'>Atlan SQL Editor</span>
           </span>
           <ul className={`nav-links`}>
             {links.map((link, index) => {
@@ -68,7 +71,6 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                   <a
                     className='nav-link-original'
                     href={link.link}
-                    target={link.target && `${link.target}`}
                     key={index}
                     onClick={() => setMenuOpen(false)}
                   >
