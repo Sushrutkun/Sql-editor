@@ -14,7 +14,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
     },
     {
       title: "SQL Editor",
-      link: "/editor",
+      link: "/",
     },
     {
       title: "Contact Us",
