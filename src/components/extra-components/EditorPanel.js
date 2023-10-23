@@ -15,10 +15,10 @@ const EditorPanel = () => {
       );
       return;
     }
-    if (query === "SELECT * FROM internetData;") {
+    if (query === "SELECT orderID,customerID,employeeID,orderDate from ShipData") {
       setQueryHistory((prev) => ({
         ...prev,
-        outputData: queryData,
+        outputData: queryData3,
       }));
     } 
     else if (query === "SELECT id, first_name, last_name FROM internetData;") {
@@ -27,10 +27,10 @@ const EditorPanel = () => {
         outputData: queryData2,
       }));
     }
-    else if (query === "SELECT orderID,customerID,employeeID,orderDate,requiredDate,shippedDate,shipVia,freight,shipName,shipAddress,shipCity,shipRegion,shipPostalCode,shipCountry from internetData") {
+    else if (query === "SELECT * FROM internetData;") {
       setQueryHistory((prev) => ({
         ...prev,
-        outputData: queryData3,
+        outputData: queryData,
       }));
     } 
     else if (query === "Select * from orders") {

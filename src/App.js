@@ -2,10 +2,7 @@ import React, { Suspense, lazy, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Loader from "./components/Loader";
-
-// const Home = lazy(() => import("./pages/home/Home"));
 const Navbar = lazy(() => import("./components/Navbar"));
-// const Github = lazy(() => import("./components/github/Github"));
 const Editor = lazy(() => import("./pages/Editor"));
 
 function App() {
@@ -19,7 +16,6 @@ function App() {
     <div className='App' id={`${darkMode ? `dark` : `light`}-mode`}>
       <Suspense
         fallback={
-          // <div>Loading ... </div>/
           <Loader />
         }
       >

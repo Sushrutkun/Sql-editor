@@ -10,20 +10,17 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
   const links = [
     {
       title: "Home",
-      link: "/",
     },
     {
       title: "SQL Editor",
-      link: "/",
     },
     {
       title: "Contact Us",
-      link: "/",
     },
     {
       title: "Github",
       target: "_blank",
-      link: "https://github.com/kirtiksingh/Atlan-Frontend-Task",
+      link: "https://github.com/Sushrutkun/Sql-editor",
     },
   ];
 
@@ -67,7 +64,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                 <li className='nav-link-original'>
                   <a
                     className='nav-link-original'
-                    href={link.link}
+                    href={link.link?link.link:""}
                     key={index}
                     target={link.target? link.target: ""}
                     onClick={() => setMenuOpen(false)}
