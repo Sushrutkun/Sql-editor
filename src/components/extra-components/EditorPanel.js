@@ -1,7 +1,8 @@
 import { useContext } from "react";
 import MainContext from "../../MainContext";
-import { queryDataAlt as queryData } from "../../assets/data/data";
+import { queryDataAlt as queryData, queryData3 } from "../../assets/data/data";
 import { queryData2 } from "../../assets/data/data";
+import { Button } from "@mui/material";
 
 
 const EditorPanel = () => {
@@ -25,7 +26,13 @@ const EditorPanel = () => {
         ...prev,
         outputData: queryData2,
       }));
-    } 
+    }
+    // else if (query === "SELECT orderID,customerID,employeeID,orderDate,requiredDate,shippedDate,shipVia,freight,shipName,shipAddress,shipCity,shipRegion,shipPostalCode,shipCountry from internetData") {
+    //   setQueryHistory((prev) => ({
+    //     ...prev,
+    //     outputData: queryData3,
+    //   }));
+    // } 
     else {
       alert("Please try the test query.");
     }
@@ -54,19 +61,19 @@ const EditorPanel = () => {
   return (
     <div className='editor-panel'>
       <div className='btn primary-btn'>
-        <button onClick={() => runQuery()}>
+        <Button variant="outlined" disableElevation onClick={() => runQuery()}>
           <span className='fa fa-play me-1'></span>Run
-        </button>
+        </Button>
       </div>
       <div className='btn secondary-btn'>
-        <button onClick={() => saveQuery()}>
+        <Button variant="outlined" onClick={() => saveQuery()}>
           <span className='fa fa-save me-1'></span>Save
-        </button>
+        </Button>
       </div>
       <div className='btn alert-btn'>
-        <button onClick={() => clearQuery()}>
+        <Button variant="outlined" onClick={() => clearQuery()}>
           <span className='fa fa-times me-1'></span>Clear
-        </button>
+        </Button>
       </div>
     </div>
   );

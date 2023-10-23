@@ -14,18 +14,15 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
     },
     {
       title: "SQL Editor",
-      link: "/editor",
+      link: "/",
     },
     {
       title: "Contact Us",
       link: "/",
     },
     {
-      title: "Login",
-      link: "/",
-    },
-    {
       title: "Github",
+      target: "_blank",
       link: "https://github.com/kirtiksingh/Atlan-Frontend-Task",
     },
   ];
@@ -72,6 +69,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                     className='nav-link-original'
                     href={link.link}
                     key={index}
+                    target={link.target? link.target: ""}
                     onClick={() => setMenuOpen(false)}
                   >
                     {link.title}
