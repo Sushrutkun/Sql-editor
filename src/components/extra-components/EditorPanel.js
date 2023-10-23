@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import MainContext from "../../MainContext";
-import { queryDataAlt as queryData, queryData3 } from "../../assets/data/data";
+import { queryDataAlt as queryData, queryData3, queryData4 } from "../../assets/data/data";
 import { queryData2 } from "../../assets/data/data";
 import { Button } from "@mui/material";
 
@@ -27,12 +27,18 @@ const EditorPanel = () => {
         outputData: queryData2,
       }));
     }
-    // else if (query === "SELECT orderID,customerID,employeeID,orderDate,requiredDate,shippedDate,shipVia,freight,shipName,shipAddress,shipCity,shipRegion,shipPostalCode,shipCountry from internetData") {
-    //   setQueryHistory((prev) => ({
-    //     ...prev,
-    //     outputData: queryData3,
-    //   }));
-    // } 
+    else if (query === "SELECT orderID,customerID,employeeID,orderDate,requiredDate,shippedDate,shipVia,freight,shipName,shipAddress,shipCity,shipRegion,shipPostalCode,shipCountry from internetData") {
+      setQueryHistory((prev) => ({
+        ...prev,
+        outputData: queryData3,
+      }));
+    } 
+    else if (query === "Select * from orders") {
+      setQueryHistory((prev) => ({
+        ...prev,
+        outputData: queryData4,
+      }));
+    } 
     else {
       alert("Please try the test query.");
     }

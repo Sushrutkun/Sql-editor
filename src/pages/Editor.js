@@ -9,8 +9,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function Editor() {
   const [query, setQuery] = useState("SELECT * FROM internetData;");
   const [queryHistory, setQueryHistory] = useState({
-    saved: ["SELECT * FROM internetData;", "SELECT id, first_name, last_name FROM internetData;"],
-    history: ["SELECT * FROM internetData;"],
+    saved: ["SELECT * FROM internetData;", "SELECT id, first_name, last_name FROM internetData;","SELECT orderID,customerID,employeeID,orderDate,requiredDate,shippedDate,shipVia,freight,shipName,shipAddress,shipCity,shipRegion,shipPostalCode,shipCountry from internetData","Select * from orders"],
+    history: ["SELECT * FROM internetData;","SELECT id, first_name, last_name FROM internetData;"],
     outputData: [],
   });
 
