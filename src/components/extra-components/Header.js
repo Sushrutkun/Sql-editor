@@ -1,28 +1,14 @@
-// import { Link } from "react-router-dom";
-// import logo from "../../assets/logo.svg";
-
-// const Header = () => {
-//   return (
-//     <div className='header'>
-//       <div className='logo'>
-//         <Link to='/'>
-//           img
-//           {/* <img src={logo} width='100px' height='100%' alt='atlan logo' /> */}
-//         </Link>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Header;
-import React from 'react'
+import React from 'react';
+import logo from '../../assets/logo.png';
 
 const Header = () => {
   return (
-    <div>
-      Header
+    <div className='header'>
+      <div className='logo'>
+        <img src={logo} width='100px' height='100px' alt='logo' />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
