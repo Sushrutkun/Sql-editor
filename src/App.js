@@ -23,11 +23,10 @@ function App() {
           <Loader />
         }
       >
-        {/* <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} /> */}
+        <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
         <Router>
           <Routes>
-            {/* <Route path='/' element={<Editor />} /> */}
-            <Route path='/' element={<Loader />} />
+            <Route path='/' element={<Editor />} />
           </Routes>
         </Router>
       </Suspense>
